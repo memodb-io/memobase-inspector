@@ -52,6 +52,7 @@ export default function ProjectPage() {
 
   useEffect(() => {
     setLoading(true);
+    setProject(null);
     fetchProject().finally(() => setLoading(false));
   }, [fetchProject]);
 
