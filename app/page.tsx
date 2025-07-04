@@ -41,9 +41,9 @@ export default function ProjectPage() {
       }
 
       setProject({
-        config_yaml: config.data || "",
         endpoint_url: res[0],
         endpoint_token: res[1],
+        config_yaml: config.data || "",
       });
     } catch {
       toast.error(t("getProjectsFailed"));
@@ -57,7 +57,7 @@ export default function ProjectPage() {
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4">
-      {loading && !project ? (
+      {loading || !project ? (
         <div className="space-y-2">
           <Skeleton className="h-[6dvh] w-full" />
           <Skeleton className="h-[4dvh] w-full" />

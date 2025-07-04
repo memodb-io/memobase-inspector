@@ -14,9 +14,9 @@ export function ProjectSwitch() {
     <Button
       variant="outline"
       className="rounded-full"
-      onClick={() => {
+      onClick={async () => {
+        await clearLocale();
         router.push("/");
-        clearLocale();
       }}
     >
       {t("switch_project")}
