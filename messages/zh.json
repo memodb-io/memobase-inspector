@@ -121,6 +121,6 @@
     "save": "保存",
     "emptyContent": "内容不能为空",
     "successMsg": "反馈发送成功！",
-    "errorMsg": "发送失败"
+    "errorMsg": "失败"
   }
 }

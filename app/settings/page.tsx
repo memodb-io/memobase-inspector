@@ -21,7 +21,7 @@ export default function ProjectSettingsForm() {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!url.trim() || !key.trim()) {
-      toast.error(t("emptyContent") || "Content cannot be empty.");
+      toast.error(t("emptyContent"));
       return;
     }
 
@@ -30,7 +30,7 @@ export default function ProjectSettingsForm() {
       await setLocale(url, key);
       router.push("/");
     } catch {
-      toast.error(t("errorMsg") || "Failed to send feedback.");
+      toast.error(t("errorMsg"));
     } finally {
       setLoading(false);
     }

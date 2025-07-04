@@ -121,6 +121,6 @@
     "save": "Save",
     "emptyContent": "Content cannot be empty.",
     "successMsg": "Feedback sent successfully!",
-    "errorMsg": "Failed to send feedback."
+    "errorMsg": "Failed"
   }
 }
