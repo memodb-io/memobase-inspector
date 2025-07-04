@@ -1,0 +1,126 @@
+{
+  "error": {
+    "title": "Error",
+    "defaultMessage": "Sorry, something went wrong",
+    "back": "Back Home"
+  },
+  "project": {
+    "getProjectsFailed": "get projects failed",
+    "tabs": {
+      "usage": "Usage Chart",
+      "apiKeys": "Auth",
+      "users": "User Table",
+      "memories": "Memories",
+      "playground": "Run Test",
+      "config": "Project Config"
+    },
+    "usage": {
+      "tokens": "You can use {canUseTokens} tokens (about {canUseConversations} conversations)",
+      "monthCost": "This project this month cost {cost} tokens"
+    },
+    "users": {
+      "search": "Search",
+      "placeholder": "Search users",
+      "table": {
+        "id": "ID",
+        "createdAt": "CreatedAt",
+        "updatedAt": "UpdatedAt",
+        "action": "Action",
+        "memories": "Memories",
+        "count": "Total {count}",
+        "profileCount": "Profile",
+        "eventCount": "Event"
+      },
+      "getUsersFailed": "Get Users Failed",
+      "getMemoriesFailed": "Get Memories Failed",
+      "reset": "Reset Filters",
+      "delete": "Delete",
+      "deleteSuccess": "Delete successfully",
+      "deleteFailed": "Delete failed",
+      "deleteConfirmTitle": "Are you sure to delete this?",
+      "deleteConfirmDescription": "This action cannot be undone. This will permanently remove your data from our servers.",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "apiKeys": {
+      "keyTips": "How to use this in your project?"
+    },
+    "playground": {
+      "getRecordsFailed": "Failed to get records",
+      "insertRecordsFailed": "Failed to save records",
+      "flashRecordsFailed": "Failed to update records"
+    },
+    "config": {
+      "basic": {
+        "name": "Project Name"
+      },
+      "advanced": {
+        "config": "Config YAML",
+        "docs": "Docs",
+        "tool": "Tool"
+      },
+      "updateSuccess": "Save Success",
+      "updateFailed": "Save Failed",
+      "save": "Save"
+    }
+  },
+  "navigation": {
+    "docs": "Docs",
+    "playground": "Playground",
+    "github": "Github",
+    "configTool": "Memory Configurator",
+    "dashboard": "Dashboard",
+    "switch_project": "Switch Project"
+  },
+  "memories": {
+    "memory_section_title": "User Memory",
+    "memories": "Profiles",
+    "events": "Events",
+    "noContent": "No content update",
+    "sub_topic": "Sub Topic",
+    "topic": "Topic",
+    "content": "Content",
+    "cancel": "Cancel",
+    "error_empty_fields": "The form content cannot be empty",
+    "submit": "Submit",
+    "delete_profile_title": "Are you absolutely sure?",
+    "delete_profile_description": "This action cannot be undone. This will permanently delete your account and remove your data from our servers.",
+    "delete": "Delete",
+    "new_user": "Generate New User"
+  },
+  "assistant": {
+    "welcomeMessage": "Welcome to Memobase, How can I help you today?",
+    "scrollToBottom": "Scroll to bottom",
+    "writeMessage": "Write a message...",
+    "send": "Send",
+    "cancel": "Cancel",
+    "suggestions": {
+      "myName": "My name",
+      "travel": "Travel",
+      "food": "Food",
+      "allergies": "Allergies",
+      "projectDetails": "Project Details"
+    },
+    "new": "New Chat Session",
+    "edit": "Edit",
+    "chatMaxConversations": "This is the maximum number of conversations for today, please wait for tomorrow",
+    "copy": "Copy",
+    "refresh": "Refresh",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "settings": {
+    "title": "Settings",
+    "desc": "Please enter the URL and key of Memobase endpoint",
+    "placeholder": "Type your message here.",
+    "issue": "Issue",
+    "idea": "Idea",
+    "contentLabel": "Content",
+    "cancel": "Cancel",
+    "saveing": "Saveing",
+    "save": "Save",
+    "emptyContent": "Content cannot be empty.",
+    "successMsg": "Feedback sent successfully!",
+    "errorMsg": "Failed to send feedback."
+  }
+}

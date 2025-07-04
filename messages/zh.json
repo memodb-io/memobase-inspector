@@ -1,0 +1,126 @@
+{
+  "error": {
+    "title": "出错了",
+    "defaultMessage": "抱歉，发生了一些错误",
+    "back": "返回首页"
+  },
+  "project": {
+    "getProjectsFailed": "获取实例失败",
+    "tabs": {
+      "apiKeys": "验证",
+      "usage": "用量",
+      "users": "用户表",
+      "memories": "记忆",
+      "playground": "测试",
+      "config": "配置"
+    },
+    "usage": {
+      "tokens": "你可以使用 {canUseTokens} tokens (大约 {canUseConversations} 轮对话)",
+      "monthCost": "这个项目本月花费了 {cost} 个tokens"
+    },
+    "users": {
+      "search": "搜索",
+      "placeholder": "检索用户",
+      "table": {
+        "id": "ID",
+        "createdAt": "创建时间",
+        "updatedAt": "更新时间",
+        "action": "操作",
+        "memories": "记忆",
+        "count": "共 {count} 条",
+        "profileCount": "画像",
+        "eventCount": "事件"
+      },
+      "getUsersFailed": "获取用户失败",
+      "getMemoriesFailed": "获取记忆失败",
+      "reset": "重置过滤",
+      "delete": "删除",
+      "deleteSuccess": "删除成功",
+      "deleteFailed": "删除失败",
+      "deleteConfirmTitle": "您确定要删除此用户吗？",
+      "deleteConfirmDescription": "此操作无法撤消。这将从我们的服务器中永久删除您的数据。",
+      "cancel": "取消",
+      "confirm": "确认"
+    },
+    "apiKeys": {
+      "keyTips": "如何在你的项目中使用它？"
+    },
+    "playground": {
+      "getRecordsFailed": "获取记录失败",
+      "insertRecordsFailed": "保存记录失败",
+      "flashRecordsFailed": "保存记录失败"
+    },
+    "config": {
+      "basic": {
+        "name": "项目名称"
+      },
+      "advanced": {
+        "config": "YAML 配置",
+        "docs": "文档",
+        "tool": "工具"
+      },
+      "updateSuccess": "更新成功",
+      "updateFailed": "更新失败",
+      "save": "保存"
+    }
+  },
+  "navigation": {
+    "docs": "文档",
+    "playground": "演示",
+    "github": "Github",
+    "configTool": "配置工具",
+    "dashboard": "仪表盘",
+    "switch_project": "切换项目"
+  },
+  "memories": {
+    "memory_section_title": "用户记忆",
+    "memories": "画像",
+    "events": "事件",
+    "noContent": "无内容更新",
+    "topic": "主题",
+    "sub_topic": "子主题",
+    "content": "内容",
+    "cancel": "取消",
+    "error_empty_fields": "表单内容不能为空",
+    "submit": "提交",
+    "delete_profile_title": "确认操作吗？",
+    "delete_profile_description": "此操作无法撤消。这将永久删除您的帐户并从我们的服务器中删除您的数据。",
+    "delete": "删除",
+    "new_user": "清空记忆"
+  },
+  "assistant": {
+    "welcomeMessage": "欢迎使用 Memobase，今天我能为您做些什么？",
+    "scrollToBottom": "滚动到底部",
+    "writeMessage": "输入消息...",
+    "send": "发送",
+    "cancel": "取消",
+    "suggestions": {
+      "myName": "我的名字",
+      "travel": "旅行",
+      "food": "食物",
+      "allergies": "过敏",
+      "projectDetails": "项目详情"
+    },
+    "new": "新对话",
+    "edit": "编辑",
+    "chatMaxConversations": "今日已达最大对话轮次，请明天再来～",
+    "copy": "复制",
+    "refresh": "刷新",
+    "previous": "上一个",
+    "next": "下一个"
+  },
+  "settings": {
+    "title": "设置",
+    "desc": "请输入 Memobase 服务的 URL 和 KEY",
+    "placeholder": "在此处输入您的消息。",
+    "issue": "Issue",
+    "idea": "Idea",
+    "contentLabel": "内容",
+    "cancel": "取消",
+    "saveing": "保存中...",
+    "save": "保存",
+    "emptyContent": "内容不能为空",
+    "successMsg": "反馈发送成功！",
+    "errorMsg": "发送失败"
+  }
+}
