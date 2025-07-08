@@ -122,5 +122,11 @@
     "emptyContent": "Content cannot be empty.",
     "successMsg": "Feedback sent successfully!",
     "errorMsg": "Failed"
+  },
+  "yaml": {
+    "invalidRoot": "YAML must be an object",
+    "missingVersion": "Missing required field: version",
+    "invalidKey": "Field \"{key}\" cannot start with \"llm_\" or \"embedding_\"",
+    "unknownError": "Failed to parse YAML, please check the syntax"
   }
 }

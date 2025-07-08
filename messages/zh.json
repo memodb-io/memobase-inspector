@@ -122,5 +122,11 @@
     "emptyContent": "内容不能为空",
     "successMsg": "反馈发送成功！",
     "errorMsg": "失败"
+  },
+  "yaml": {
+    "invalidRoot": "YAML 必须是一个对象",
+    "missingVersion": "缺少必要字段 version",
+    "invalidKey": "字段 \"{key}\" 不允许以 \"llm_\" 或 \"embedding_\" 开头",
+    "unknownError": "YAML 解析失败，请检查语法"
   }
 }

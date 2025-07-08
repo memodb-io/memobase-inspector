@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 
 import { Card, CardContent } from "@/components/ui/card";
@@ -21,6 +21,7 @@ import { yaml } from "@codemirror/lang-yaml";
 import { okaidia } from "@uiw/codemirror-theme-okaidia";
 
 import { useTheme } from "next-themes";
+import { useValidateConfigYaml } from "@/lib/validate-config-yaml";
 
 export default function Config({
   project,
@@ -31,10 +32,13 @@ export default function Config({
 }) {
   const { theme } = useTheme();
   const t = useTranslations("project.config");
+  const { validate } = useValidateConfigYaml();
+
   const [loading, setLoading] = useState(false);
   const [defaultConfigYaml, setDefaultConfigYaml] = useState(
     project?.config_yaml || "# Memobase Project Config"
   );
+  const [yamlError, setYamlError] = useState<string | null>(null);
 
   const handleUpdate = async () => {
     setLoading(true);
@@ -52,6 +56,11 @@ export default function Config({
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const result = validate(defaultConfigYaml);
+    setYamlError(result.valid ? null : result.error || "unknown error");
+  }, [validate, defaultConfigYaml]);
 
   return (
     <Card>
@@ -97,8 +106,20 @@ export default function Config({
           />
         </div>
 
-        <div className="flex justify-end">
-          <Button size="sm" disabled={loading} onClick={handleUpdate}>
+        <div className="flex justify-end items-center gap-4">
+          {yamlError && (
+            <Badge
+              variant="secondary"
+              className="bg-red-500 text-white dark:bg-red-600"
+            >
+              {yamlError}
+            </Badge>
+          )}
+          <Button
+            size="sm"
+            disabled={loading || !!yamlError}
+            onClick={handleUpdate}
+          >
             {t("save")}
           </Button>
         </div>
