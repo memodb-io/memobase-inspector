@@ -1,4 +1,15 @@
-# MemoBase Inspector
+<div align="center">
+  <h1>Memobase Inspector</h1>
+  <p>
+    	<img src="https://img.shields.io/badge/Memobase-Inspector-blue">
+      <img src="https://img.shields.io/badge/license-MIT-green">
+  </p>
+  <p>
+    <a href="https://app.memobase.io/inspector" > 
+    	<img style="border-radius: 12px; width: 700px;" src="https://github.com/user-attachments/assets/42ad239f-8021-4319-a933-5298dfd45615">
+    </a>
+  </p>
+</div>
 
 A modern, feature-rich dashboard application built with Next.js 15 and React 19, designed for efficient management and analysis of MemoBase data. The project supports internationalization and cloud deployment.
 
@@ -87,7 +98,7 @@ pnpm deploy
 
 ## License
 
-This project is private and proprietary.
+This project is based on Memobase and follows its original license. Please refer to the original Memobase repository for license details.
 
 ## Support
 
