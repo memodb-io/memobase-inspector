@@ -7,7 +7,14 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { useTranslations } from "next-intl";
 
-import { RefreshCw, ChevronDown, ChevronUp, Pencil, Trash } from "lucide-react";
+import {
+  RefreshCw,
+  ChevronDown,
+  ChevronUp,
+  Pencil,
+  Trash,
+  Download,
+} from "lucide-react";
 
 import { UserProfile, UserEvent } from "@memobase/memobase";
 
@@ -38,7 +45,6 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-
 import {
   Form,
   FormControl,
@@ -46,6 +52,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { JsonDownload } from "@/components/json-download";
 
 import {
   addProfile,
@@ -68,6 +75,8 @@ export function UserMemory({
   canAdd,
   canEdit,
   canDelete,
+  canDownload,
+  downloadFileName,
 }: {
   isLoading: boolean;
   setIsLoading: (isLoading: boolean) => void;
@@ -80,6 +89,8 @@ export function UserMemory({
   canAdd?: boolean;
   canEdit?: boolean;
   canDelete?: boolean;
+  canDownload?: boolean;
+  downloadFileName?: string;
 }) {
   const t = useTranslations("memories");
   const [foldStatus, setFoldStatus] = useState<Record<string, boolean>>({});
@@ -146,6 +157,20 @@ export function UserMemory({
               <Button onClick={onNewUser} className="ml-2" size="sm">
                 {t("new_user")}
               </Button>
+            )}
+            {canDownload && (
+              <JsonDownload
+                data={{ profiles, events }}
+                fileName={downloadFileName || "memobase.json"}
+                trigger={
+                  <button
+                    className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full"
+                    disabled={isLoading}
+                  >
+                    <Download className="w-5 h-5" />
+                  </button>
+                }
+              />
             )}
           </div>
         </div>

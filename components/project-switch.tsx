@@ -16,7 +16,7 @@ export function ProjectSwitch() {
       className="rounded-full"
       onClick={async () => {
         await clearLocale();
-        router.push("/");
+        router.push("/settings");
       }}
     >
       {t("switch_project")}

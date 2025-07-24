@@ -9,7 +9,7 @@
     "tabs": {
       "apiKeys": "验证",
       "usage": "用量",
-      "users": "用户表",
+      "users": "用户",
       "memories": "记忆",
       "playground": "测试",
       "config": "配置"
@@ -29,7 +29,9 @@
         "memories": "记忆",
         "count": "共 {count} 条",
         "profileCount": "画像",
-        "eventCount": "事件"
+        "eventCount": "事件",
+        "downloading": "下载中",
+        "download": "下载"
       },
       "getUsersFailed": "获取用户失败",
       "getMemoriesFailed": "获取记忆失败",

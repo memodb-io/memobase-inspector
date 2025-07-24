@@ -23,7 +23,9 @@ import {
 
 import { toast } from "sonner";
 
-export default function Playground() {
+import { Project } from "@/types";
+
+export default function Playground({ project }: { project: Project }) {
   const t = useTranslations("project.playground");
   const [isLoading, setIsLoading] = useState(false);
   const lastUserMessageRef = useRef<string>("");
@@ -116,12 +118,13 @@ export default function Playground() {
   }, [t]);
 
   useEffect(() => {
+    if (!project) return;
     const init = async () => {
       await fetchProfile();
       await fetchEvent();
     };
     init();
-  }, [fetchProfile, fetchEvent]);
+  }, [fetchProfile, fetchEvent, project]);
 
   return (
     <Card className="py-0 overflow-hidden">

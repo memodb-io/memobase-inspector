@@ -8,11 +8,7 @@ import { toast } from "sonner";
 import { GetProjectUsageItemResponse } from "@memobase/memobase";
 import { getProjectUsage } from "@/api/models/memobase";
 
-import {
-  Card,
-  CardHeader,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import {
   ChartContainer,
@@ -20,6 +16,8 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { Skeleton } from "@/components/ui/skeleton";
+
+import { Project } from "@/types";
 
 const chartConfig = {
   tokens: {
@@ -50,7 +48,7 @@ const chartConfig = {
   },
 };
 
-export default function Usage() {
+export default function Usage({ project }: { project: Project }) {
   const router = useRouter();
   const t = useTranslations("project");
   const [loading, setLoading] = useState(true);
@@ -89,11 +87,12 @@ export default function Usage() {
   }, [router, t]);
 
   useEffect(() => {
+    if (!project) return;
     setLoading(true);
     fetchUsage().finally(() => {
       setLoading(false);
     });
-  }, [fetchUsage]);
+  }, [fetchUsage, project]);
 
   return (
     <>

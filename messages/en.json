@@ -7,12 +7,12 @@
   "project": {
     "getProjectsFailed": "get projects failed",
     "tabs": {
-      "usage": "Usage Chart",
+      "usage": "Usages",
       "apiKeys": "Auth",
-      "users": "User Table",
+      "users": "Users",
       "memories": "Memories",
-      "playground": "Run Test",
-      "config": "Project Config"
+      "playground": "Playground",
+      "config": "Config"
     },
     "usage": {
       "tokens": "You can use {canUseTokens} tokens (about {canUseConversations} conversations)",
@@ -29,7 +29,9 @@
         "memories": "Memories",
         "count": "Total {count}",
         "profileCount": "Profile",
-        "eventCount": "Event"
+        "eventCount": "Event",
+        "downloading": "Downloading",
+        "download": "Download"
       },
       "getUsersFailed": "Get Users Failed",
       "getMemoriesFailed": "Get Memories Failed",

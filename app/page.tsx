@@ -88,16 +88,16 @@ export default function ProjectPage() {
               <ApiKeys project={project!} />
             </TabsContent>
             <TabsContent value="users">
-              <Users />
+              <Users project={project} />
             </TabsContent>
             <TabsContent value="usage">
-              <Usage />
+              <Usage project={project} />
             </TabsContent>
             <TabsContent value="config">
-              <Config project={project!} onRefresh={() => fetchProject()} />
+              <Config project={project} onRefresh={() => fetchProject()} />
             </TabsContent>
             <TabsContent value="playground">
-              <Playground />
+              <Playground project={project} />
             </TabsContent>
           </Tabs>
         </>

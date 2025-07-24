@@ -44,6 +44,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { JsonDownload } from "@/components/json-download";
 
 import { UserProfile, UserEvent, ProjectUser } from "@memobase/memobase";
 import { ProjectUsersOrderBy } from "@/types";
@@ -54,7 +55,9 @@ import { ArrowDown01, ArrowDown10, ArrowDownUp } from "lucide-react";
 
 import { toast } from "sonner";
 
-export default function Users() {
+import { Project } from "@/types";
+
+export default function Users({ project }: { project: Project }) {
   const t = useTranslations("project.users");
   const router = useRouter();
   const [users, setUsers] = useState<ProjectUser[]>([]);
@@ -72,6 +75,8 @@ export default function Users() {
   const [profiles, setProfiles] = useState<UserProfile[]>([]);
   const [events, setEvents] = useState<UserEvent[]>([]);
   const [open, setOpen] = useState(false);
+  const [memoriesUserId, setMemoriesUserId] = useState<string | null>(null);
+
   const [selectedUser, setSelectedUser] = useState<ProjectUser | null>(null);
 
   const handleDelete = async (uid: string) => {
@@ -126,6 +131,10 @@ export default function Users() {
       if (res.code === 0 && res.data) {
         setProfiles(res.data.profiles);
         setEvents(res.data.events);
+        return {
+          profiles: res.data.profiles,
+          events: res.data.events,
+        };
       } else {
         toast.error(res.message || t("getMemoriesFailed"));
       }
@@ -137,11 +146,12 @@ export default function Users() {
   };
 
   useEffect(() => {
+    if (!project) return;
     setLoading(true);
     fetchUsers().finally(() => {
       setLoading(false);
     });
-  }, [fetchUsers]);
+  }, [fetchUsers, project]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -166,6 +176,10 @@ export default function Users() {
             profiles={profiles}
             events={events}
             profilesFold
+            canDownload={
+              !memoriesLoading && (!!profiles.length || !!events.length)
+            }
+            downloadFileName={`memobase-${memoriesUserId}.json`}
           />
         </SheetContent>
       </Sheet>
@@ -287,12 +301,34 @@ export default function Users() {
                           variant="outline"
                           size="sm"
                           onClick={() => {
+                            setMemoriesUserId(user.id);
                             setOpen(true);
                             fetchMemories(user.id);
                           }}
                         >
                           {t("table.memories")}
                         </Button>
+                        <JsonDownload
+                          fileName={`memobase-${user.id}.json`}
+                          beforeEvent={async () => {
+                            setMemoriesUserId(user.id);
+                            return fetchMemories(user.id);
+                          }}
+                          trigger={
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              disabled={
+                                (!user.profile_count && !user.event_count) ||
+                                (memoriesLoading && memoriesUserId === user.id)
+                              }
+                            >
+                              {memoriesLoading && memoriesUserId === user.id
+                                ? t("table.downloading")
+                                : t("table.download")}
+                            </Button>
+                          }
+                        />
                         <AlertDialog
                           open={selectedUser?.id === user.id}
                           onOpenChange={(open) =>
