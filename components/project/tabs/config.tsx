@@ -19,6 +19,7 @@ import { ArrowUpRight } from "lucide-react";
 import ReactCodeMirror from "@uiw/react-codemirror";
 import { yaml } from "@codemirror/lang-yaml";
 import { okaidia } from "@uiw/codemirror-theme-okaidia";
+import { EditorView } from "@codemirror/view";
 
 import { useTheme } from "next-themes";
 import { useValidateConfigYaml } from "@/lib/validate-config-yaml";
@@ -98,10 +99,9 @@ export default function Config({
           <ReactCodeMirror
             value={defaultConfigYaml}
             theme={theme === "dark" ? okaidia : "light"}
-            extensions={[yaml()]}
+            extensions={[EditorView.lineWrapping, yaml()]}
             minHeight="200px"
             maxHeight="60dvh"
-            width="70dvw"
             onChange={(v) => setDefaultConfigYaml(v)}
             className="rounded-md border border-input overflow-hidden"
           />
