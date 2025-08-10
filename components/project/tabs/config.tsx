@@ -100,7 +100,8 @@ export default function Config({
             theme={theme === "dark" ? okaidia : "light"}
             extensions={[yaml()]}
             minHeight="200px"
-            maxHeight="500px"
+            maxHeight="60dvh"
+            width="70dvw"
             onChange={(v) => setDefaultConfigYaml(v)}
             className="rounded-md border border-input overflow-hidden"
           />
